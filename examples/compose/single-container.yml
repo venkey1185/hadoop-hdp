@@ -8,6 +8,8 @@ services:
     image: hdp/postgres
     networks:
      - dev
+    environment:
+     - DDL_URL=${DDL_URL}
     hostname: postgres
     domainname: dev
   ambari-server.dev:
