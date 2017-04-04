@@ -1,15 +1,15 @@
-version: '2'
+version: '3'
 services:
   postgres.dev:
     build:
      context: ../../containers/postgres
      args:
-      - DDL_URL=${DDL_URL}
+      - AMBARI_DDL_URL=${AMBARI_DDL_URL}
     image: hdp/postgres
     networks:
      - dev
     environment:
-     - DDL_URL=${DDL_URL}
+     - AMBARI_DDL_URL=${AMBARI_DDL_URL}
     hostname: postgres
     domainname: dev
   ambari-server.dev:
